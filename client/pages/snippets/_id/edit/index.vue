@@ -64,7 +64,9 @@
             ></textarea>
 
             <div class="bg-white p-8 rounded-lg text-gray-600">
-              Markdown content
+              <StepMarkdown
+                :value="currentStep.body"
+              />
             </div>
           </div>
 
@@ -153,6 +155,7 @@
 <script>
 import StepList from '../components/StepList'
 import StepNavigationButton from '../components/StepNavigationButton'
+import StepMarkdown from '@/components/snippets/StepMarkdown'
 
 import AddStepButton from './components/AddStepButton'
 import DeleteStepButton from './components/DeleteStepButton'
@@ -168,6 +171,7 @@ export default {
     StepNavigationButton,
     AddStepButton,
     DeleteStepButton,
+    StepMarkdown
   },
 
   data () {
