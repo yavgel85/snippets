@@ -2,7 +2,7 @@
   <a
     href="#"
     @click.prevent="addStep"
-    class="block mb-2 p-3 bg-blue-500 rounded-lg"
+    class="block mb-2 p-3 bg-blue-500 rounded-lg mr-2 lg:mr-0"
     :title="`Add step ${position}`"
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="fill-current text-white h-6 w-6">
