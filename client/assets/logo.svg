@@ -8,13 +8,13 @@
       <g id="Group-2">
         <rect id="Rectangle" x="0" y="0" width="380" height="125"></rect>
         <g id="Group" transform="translate(7.000000, 0.000000)" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="bold">
-          <g id="snippets" fill="#4A5568" font-size="83" letter-spacing="0.005173">
+          <g id="snippets" fill="#4A5568" font-size="81" letter-spacing="0.005173">
             <text>
               <tspan x="12.899616" y="81">snippets</tspan>
             </text>
           </g>
-          <text id="by-eyavgel" font-size="18" fill="#718096">
-            <tspan x="199.88" y="105">by Eugene Yavgel</tspan>
+          <text id="by-eyavgel" font-size="20" fill="#718096">
+            <tspan x="185.88" y="105">by Eugene Yavgel</tspan>
           </text>
         </g>
       </g>
