@@ -11,6 +11,7 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.2",
+    "codemirror": "^5.58.2",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "highlight.js": "^10.3.2",

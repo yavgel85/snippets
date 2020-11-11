@@ -58,16 +58,10 @@
           </div>
 
           <div class="w-full lg:mr-2">
-            <textarea
-              class="w-full mb-6 border-dashed border-2 border-gray-400 rounded-lg"
+            <StepEditor
+              :step="currentStep"
               v-model="currentStep.body"
-            ></textarea>
-
-            <div class="bg-white p-8 rounded-lg text-gray-600">
-              <StepMarkdown
-                :value="currentStep.body"
-              />
-            </div>
+            />
           </div>
 
           <div class="flex flex-row-reverse lg:flex-col order-first lg:order-last">
@@ -155,7 +149,7 @@
 <script>
 import StepList from '../components/StepList'
 import StepNavigationButton from '../components/StepNavigationButton'
-import StepMarkdown from '@/components/snippets/StepMarkdown'
+import StepEditor from './components/StepEditor'
 
 import AddStepButton from './components/AddStepButton'
 import DeleteStepButton from './components/DeleteStepButton'
@@ -171,7 +165,7 @@ export default {
     StepNavigationButton,
     AddStepButton,
     DeleteStepButton,
-    StepMarkdown
+    StepEditor
   },
 
   data () {
