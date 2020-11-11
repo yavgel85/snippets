@@ -37,7 +37,9 @@
           </div>
 
           <div class="bg-white p-8 rounded-lg text-gray-600 w-full lg:mr-2">
-            {{ currentStep.body }}
+            <StepMarkdown
+              :value="currentStep.body"
+            />
           </div>
 
           <div class="flex flex-row lg:flex-col order-first lg:order-last">
@@ -94,6 +96,7 @@
 <script>
   import StepList from './components/StepList'
   import StepNavigationButton from './components/StepNavigationButton'
+  import StepMarkdown from '@/components/snippets/StepMarkdown'
 
   import browseSnippet from "~/mixins/snippets/browseSnippet";
 
@@ -106,7 +109,8 @@
 
     components: {
       StepList,
-      StepNavigationButton
+      StepNavigationButton,
+      StepMarkdown,
     },
 
     data () {
