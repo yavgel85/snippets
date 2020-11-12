@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,6 +33,11 @@ class Snippet extends Model
     public function isPublic()
     {
         return $this->is_public;
+    }
+
+    public function scopePublic(Builder $builder): Builder
+    {
+        return $builder->where('is_public', true);
     }
 
     public function steps(): HasMany

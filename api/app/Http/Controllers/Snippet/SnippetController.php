@@ -14,6 +14,18 @@ class SnippetController extends Controller
         $this->middleware(['auth:api'])->only('store', 'update');
     }
 
+    public function index(Request $request)
+    {
+        return fractal()
+            ->collection(
+                Snippet::take($request->get('limit', 10))->latest()->public()->get()
+            )
+            ->transformWith(new SnippetTransformer())
+            ->parseIncludes(['author'])
+            ->toArray()
+        ;
+    }
+
     public function show(Snippet $snippet)
     {
         $this->authorize('show', $snippet);
