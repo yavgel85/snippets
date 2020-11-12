@@ -14,6 +14,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'snippets'], function () {
     Route::get('', [SnippetController::class, 'index']);
     Route::post('', [SnippetController::class, 'store']);
+    Route::delete('{snippet:uuid}', [SnippetController::class, 'destroy']);
     Route::get('{snippet:uuid}', [SnippetController::class, 'show']);
     Route::patch('{snippet:uuid}', [SnippetController::class, 'update']);
 

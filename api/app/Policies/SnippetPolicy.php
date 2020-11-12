@@ -39,6 +39,16 @@ class SnippetPolicy
      * @param Snippet $snippet
      * @return bool
      */
+    public function destroy(User $user, Snippet $snippet): bool
+    {
+        return $user->id === $snippet->user_id;
+    }
+
+    /**
+     * @param User $user
+     * @param Snippet $snippet
+     * @return bool
+     */
     public function storeStep(User $user, Snippet $snippet): bool
     {
         return $user->id === $snippet->user_id;

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Me;
 
 use App\Http\Controllers\Controller;
-use App\Models\Snippet;
 use App\Transformers\Snippets\SnippetTransformer;
 use Illuminate\Http\Request;
 

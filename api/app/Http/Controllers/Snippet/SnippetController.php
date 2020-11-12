@@ -60,4 +60,11 @@ class SnippetController extends Controller
 
         $snippet->update($request->only('title', 'is_public'));
     }
+
+    public function destroy(Snippet $snippet, Request $request): void
+    {
+        $this->authorize('destroy', $snippet);
+
+       $snippet->delete();
+    }
 }
