@@ -16,6 +16,7 @@
       v-for="snippet in snippets"
       :key="snippet.uuid"
       :snippet="snippet"
+      @deleted="removeSnippet"
     />
   </div>
 </template>
@@ -28,15 +29,15 @@ import DashboardSnippetCard from "./components/DashboardSnippetCard";
       DashboardSnippetCard
     },
 
-    data() {
-      return {
-        snippets: []
-      }
-    },
-
     head() {
       return {
         title: 'Dashboard'
+      }
+    },
+
+    data() {
+      return {
+        snippets: []
       }
     },
 
@@ -50,6 +51,10 @@ import DashboardSnippetCard from "./components/DashboardSnippetCard";
             id: snippet.data.uuid
           }
         })
+      },
+
+      removeSnippet (snippet) {
+        this.snippets = this.snippets.filter((s) => s.uuid !== snippet.uuid)
       }
     },
 

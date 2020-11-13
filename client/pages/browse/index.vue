@@ -30,15 +30,15 @@ export default {
     BrowseSnippetCard
   },
 
-  data() {
-    return {
-      snippets: []
-    }
-  },
-
   head() {
     return {
       title: 'Browse'
+    }
+  },
+
+  data() {
+    return {
+      snippets: []
     }
   },
 
