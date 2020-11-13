@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use App\Transformers\Snippets\SnippetTransformer;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
 
 class Snippet extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = ['uuid', 'title', 'is_public'];
 
@@ -28,6 +30,21 @@ class Snippet extends Model
         static::creating(function (Snippet $snippet) {
             $snippet->uuid = Str::uuid();
         });
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray(): array
+    {
+        return fractal()
+            ->item($this)
+            ->transformWith(new SnippetTransformer())
+            ->parseIncludes(['author', 'steps'])
+            ->toArray()
+        ;
     }
 
     public function isPublic()
