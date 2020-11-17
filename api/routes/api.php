@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\{SignInController, MeController, SignOutController};
+use App\Http\Controllers\Keys\AlgoliaKeyController;
 use App\Http\Controllers\Me\SnippetController as Me;
 use App\Http\Controllers\Snippet\{SnippetController, StepController};
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,8 @@ Route::group(['prefix' => 'snippets'], function () {
 
 Route::group(['prefix' => 'me'], function () {
     Route::get('snippets', [Me::class, 'index']);
+});
+
+Route::group(['prefix' => 'keys'], function () {
+    Route::get('algolia', AlgoliaKeyController::class);
 });

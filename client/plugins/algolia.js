@@ -2,10 +2,12 @@ import algoliasearch from 'algoliasearch/lite'
 import { createInstantSearch } from 'vue-instantsearch'
 import { history } from 'instantsearch.js/es/lib/routers'
 
-export default ({ app }, inject) => {
+export default async ({ app }, inject) => {
+  let key = await app.$axios.$get('keys/algolia')
+
   const searchClient = algoliasearch(
     'IOIMP7A6Q8',
-    'c5f52838a6c3cfc97ae36ee183117ea3'
+    key.data
   )
 
   const { instantsearch } = createInstantSearch({
