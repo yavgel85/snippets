@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\{SignInController, MeController, SignOutController
 use App\Http\Controllers\Keys\AlgoliaKeyController;
 use App\Http\Controllers\Me\SnippetController as Me;
 use App\Http\Controllers\Snippet\{SnippetController, StepController};
+use App\Http\Controllers\Users\{UserController, SnippetController as UserSnippet};
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'auth'], function () {
@@ -26,6 +27,11 @@ Route::group(['prefix' => 'snippets'], function () {
 
 Route::group(['prefix' => 'me'], function () {
     Route::get('snippets', [Me::class, 'index']);
+});
+
+Route::group(['prefix' => 'users/{user:username}'], function () {
+    Route::get('', [UserController::class, 'show']);
+    Route::get('snippets', [UserSnippet::class, 'index']);
 });
 
 Route::group(['prefix' => 'keys'], function () {
