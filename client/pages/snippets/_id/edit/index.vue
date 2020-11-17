@@ -180,6 +180,10 @@ export default {
     browseSnippet
   ],
 
+  middleware: [
+    'auth'
+  ],
+
   head() {
     return {
       title: `Editing ${this.snippet.title || 'Untitled snippet'}`

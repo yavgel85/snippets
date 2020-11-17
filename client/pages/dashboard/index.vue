@@ -41,6 +41,10 @@ import DashboardSnippetCard from "./components/DashboardSnippetCard";
       }
     },
 
+    middleware: [
+      'auth'
+    ],
+
     methods: {
       async createSnippet () {
         let snippet = await this.$axios.$post('snippets')
