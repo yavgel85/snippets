@@ -31,6 +31,7 @@ Route::group(['prefix' => 'me'], function () {
 
 Route::group(['prefix' => 'users/{user:username}'], function () {
     Route::get('', [UserController::class, 'show']);
+    Route::patch('', [UserController::class, 'update']);
     Route::get('snippets', [UserSnippet::class, 'index']);
 });
 
