@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\{SignInController, MeController, SignOutController};
+use App\Http\Controllers\Auth\{SignInController, MeController, SignOutController, SignUpController};
 use App\Http\Controllers\Keys\AlgoliaKeyController;
 use App\Http\Controllers\Me\SnippetController as Me;
 use App\Http\Controllers\Snippet\{SnippetController, StepController};
@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'auth'], function () {
     Route::post('signin', SignInController::class);
+    Route::post('signup', SignUpController::class);
     Route::get('me', MeController::class);
     Route::post('signout', SignOutController::class);
 });
