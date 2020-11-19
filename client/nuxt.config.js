@@ -1,6 +1,8 @@
 let env = require('dotenv').config();
 
 export default {
+  env: env.parsed,
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - Snippets',
