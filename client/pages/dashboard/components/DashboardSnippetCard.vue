@@ -4,6 +4,15 @@
   >
     <ul class="flex items-end text-gray-600">
       <li class="mr-6">
+        <template v-if="snippet.is_public">
+          <div class="inline-block px-2 leading-relaxed text-gray-600 rounded bg-gray-400 text-sm">Public</div>
+        </template>
+        <template v-else>
+          <div class="inline-block px-2 leading-relaxed text-gray-600 rounded bg-gray-400 text-sm">Private</div>
+        </template>
+      </li>
+
+      <li class="mr-6">
         <nuxt-link
           :to="{
             name: 'snippets-id-edit',

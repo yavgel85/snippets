@@ -144,9 +144,9 @@
       </form>
 
       <div class="text-center text-gray-600">
-        No account?
+        Already got an account?
 
-        <nuxt-link :to="{ name: 'index' }">Create one here</nuxt-link>
+        <nuxt-link :to="{ name: 'auth-signin' }">Sign in here</nuxt-link>
       </div>
     </div>
   </div>

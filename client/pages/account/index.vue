@@ -161,6 +161,9 @@
         try {
           await this.$axios.$patch(`users/${this.$auth.user.username}`, this.form)
           await this.$auth.fetchUser()
+
+          this.form.password = ''
+          this.validation = {}
         } catch (e) {
           if (e.response.status === 422) {
             this.validation = e.response.data.errors
